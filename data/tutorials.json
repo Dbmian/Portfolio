@@ -1,0 +1,348 @@
+[
+  {
+    "id": "ef962cb5bc",
+    "slug": "sql",
+    "title": "Tutorial de SQL básico: SQLite y PostgreSQL",
+    "subtitle": "SQLite · PostgreSQL · Consultas básicas",
+    "summary": "Conceptos fundamentales de SQL, conexiones y consultas simples, de tablas y JOINs hasta subconsultas.",
+    "status": "published",
+    "parts": [
+      {
+        "id": "03c72952",
+        "title": "Introducción a SQL",
+        "meta": [
+          {
+            "label": "Motor",
+            "value": "SQLite"
+          },
+          {
+            "label": "Herramienta",
+            "value": "SQLiteStudio"
+          }
+        ],
+        "blocks": [
+          {
+            "id": "839e179c",
+            "type": "text",
+            "text": "Esta sección cubre los conceptos básicos de SQL: cómo crear tablas, cargar datos y usar algunas funciones elementales."
+          },
+          {
+            "id": "116fc4d3",
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Cómo crear una tabla y cargar datos",
+              "`SELECT` básico",
+              "Uso de `WHERE`",
+              "`ORDER BY`",
+              "Funciones de agregación (`AVG`)",
+              "`GROUP BY`"
+            ]
+          },
+          {
+            "id": "ce3f2049",
+            "type": "images",
+            "images": [
+              {
+                "src": "/uploads/sql-p1-1.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p1-2.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p1-3.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p1-4.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p1-5.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p1-6.jpg",
+                "caption": ""
+              }
+            ]
+          },
+          {
+            "id": "0647cb91",
+            "type": "text",
+            "text": "Se ven conceptos como tablas, filas, columnas y claves primarias."
+          }
+        ]
+      },
+      {
+        "id": "d61a2bc7",
+        "title": "Relaciones entre tablas y consultas más complejas",
+        "meta": [
+          {
+            "label": "Motor",
+            "value": "SQLite"
+          },
+          {
+            "label": "Herramienta",
+            "value": "SQLiteStudio"
+          }
+        ],
+        "blocks": [
+          {
+            "id": "29d2661c",
+            "type": "text",
+            "text": "En esta sección muestro cómo se relacionan las tablas entre sí y cómo usar `JOIN` para responder preguntas más complejas."
+          },
+          {
+            "id": "0bd922f2",
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Estructura de la base de datos y tablas relacionadas",
+              "Uso de `JOIN` para relacionar empleados y proyectos",
+              "`JOIN` + `GROUP BY` para contar empleados por proyecto",
+              "Funciones de agregación (`AVG`) aplicadas a datos relacionados",
+              "`JOIN` + `WHERE` para filtrar información entre tablas"
+            ]
+          },
+          {
+            "id": "a48af62f",
+            "type": "images",
+            "images": [
+              {
+                "src": "/uploads/sql-p2-1.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p2-2.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p2-3.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p2-4.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p2-5.jpg",
+                "caption": ""
+              }
+            ]
+          },
+          {
+            "id": "47f1948b",
+            "type": "text",
+            "text": "La idea es mostrar cómo SQL permite responder preguntas concretas a partir de datos relacionados."
+          }
+        ]
+      },
+      {
+        "id": "9d43217d",
+        "title": "HAVING, WHERE y JOINS",
+        "meta": [
+          {
+            "label": "Motor",
+            "value": "SQLite"
+          },
+          {
+            "label": "Herramienta",
+            "value": "SQLiteStudio"
+          }
+        ],
+        "blocks": [
+          {
+            "id": "9b80380e",
+            "type": "text",
+            "text": "Continuando con las partes anteriores, en esta ocasión avanzamos con consultas más complejas."
+          },
+          {
+            "id": "b5e95b36",
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Diferencias entre las sentencias `JOIN`",
+              "`HAVING` y su diferencia con `WHERE`",
+              "Uso de `INNER JOIN`",
+              "Uso de `LEFT JOIN`",
+              "Uso de `HAVING`",
+              "Subconsulta sencilla"
+            ]
+          },
+          {
+            "id": "ad32e242",
+            "type": "images",
+            "images": [
+              {
+                "src": "/uploads/sql-p3-1.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p3-2.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p3-3.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p3-4.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p3-5.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p3-6.jpg",
+                "caption": ""
+              }
+            ]
+          },
+          {
+            "id": "9cf01204",
+            "type": "text",
+            "text": "Seguimos avanzando incorporando consultas un poco más complejas, manteniendo siempre ejemplos simples y reales."
+          }
+        ]
+      },
+      {
+        "id": "10eb3416",
+        "title": "Subqueries",
+        "meta": [
+          {
+            "label": "Motor",
+            "value": "PostgreSQL"
+          },
+          {
+            "label": "Herramienta",
+            "value": "pgAdmin"
+          }
+        ],
+        "blocks": [
+          {
+            "id": "4e0cb575",
+            "type": "text",
+            "text": "En esta parte explico cómo usar **subconsultas**."
+          },
+          {
+            "id": "805e6825",
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "¿Qué es una subconsulta?",
+              "Subconsultas en la cláusula `WHERE`",
+              "Subconsultas en la cláusula `FROM`",
+              "Subconsultas correlacionadas"
+            ]
+          },
+          {
+            "id": "60489bd8",
+            "type": "images",
+            "images": [
+              {
+                "src": "/uploads/sql-p4-1.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p4-2.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p4-3.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p4-4.jpg",
+                "caption": ""
+              }
+            ]
+          },
+          {
+            "id": "6fde286b",
+            "type": "text",
+            "text": "En la próxima parte vamos a comenzar a trabajar con PostgreSQL, viendo cómo conectarnos a una base de datos y cómo resolver consultas más complejas cuando no es posible utilizar `JOIN`."
+          }
+        ]
+      },
+      {
+        "id": "bf9e32d2",
+        "title": "PostgreSQL y consultas avanzadas",
+        "meta": [
+          {
+            "label": "Motor",
+            "value": "PostgreSQL"
+          },
+          {
+            "label": "Herramienta",
+            "value": "pgAdmin"
+          }
+        ],
+        "blocks": [
+          {
+            "id": "58209796",
+            "type": "text",
+            "text": "En esta parte final muestro cómo trabajar con PostgreSQL y resolver consultas más complejas."
+          },
+          {
+            "id": "b8d114f2",
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Conexión a PostgreSQL",
+              "Estructura y valores",
+              "Ejemplo 1 sin `JOIN`",
+              "Ejemplo 2 sin `JOIN`",
+              "Ejemplo 3 sin `JOIN`"
+            ]
+          },
+          {
+            "id": "f8138a02",
+            "type": "images",
+            "images": [
+              {
+                "src": "/uploads/sql-p5-1.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p5-2.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p5-3.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p5-4.jpg",
+                "caption": ""
+              },
+              {
+                "src": "/uploads/sql-p5-5.jpg",
+                "caption": ""
+              }
+            ]
+          },
+          {
+            "id": "d32aa17b",
+            "type": "text",
+            "text": "Se muestran conexión a PostgreSQL, CTEs, funciones de ventana y consultas avanzadas."
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2026-10-22T21:05:46.967Z"
+  },
+  {
+    "id": "13d714567e",
+    "slug": "linux",
+    "title": "Tutorial de Linux",
+    "subtitle": "",
+    "summary": "Comandos esenciales y primeros pasos en la terminal.",
+    "status": "soon",
+    "parts": [],
+    "updatedAt": "2026-10-22T21:05:46.967Z"
+  }
+]

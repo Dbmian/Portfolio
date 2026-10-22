@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorial de SQL básico: SQLite y PostgreSQL · Damián Briante</title>
+  <meta name="description" content="Conceptos fundamentales de SQL, conexiones y consultas simples, de tablas y JOINs hasta subconsultas.">
+  <meta name="theme-color" content="#0f1115">
+  <link rel="icon" type="image/png" href="/Portfolio/img/favicon.png">
+  <script src="/Portfolio/js/theme.js"></script>
+  <link rel="stylesheet" href="/Portfolio/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/Portfolio/">Damián Briante</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="/Portfolio/#sobre-mi">Sobre mí</a>
+        <a href="/Portfolio/tutoriales" aria-current="page">Tutoriales</a>
+        <a href="/Portfolio/#contacto">Contacto</a>
+        
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Cambiar tema">
+          <span class="i-moon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span><span class="i-sun"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+
+    <section class="page-head">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Ruta"><a href="/Portfolio/tutoriales">Tutoriales</a><span>/</span><span>Tutorial de SQL básico: SQLite y PostgreSQL</span></nav>
+        <h1>Tutorial de SQL básico: SQLite y PostgreSQL</h1>
+        <p class="lead">SQLite · PostgreSQL · Consultas básicas</p>
+        
+        
+      </div>
+    </section>
+    <div class="wrap tutorial-layout">
+      <aside class="toc" aria-label="Contenido">
+        <p class="toc-title">En este tutorial</p>
+        <ol><li><a href="#parte-1"><span class="toc-n">1</span><span>Introducción a SQL</span></a></li><li><a href="#parte-2"><span class="toc-n">2</span><span>Relaciones entre tablas y consultas más complejas</span></a></li><li><a href="#parte-3"><span class="toc-n">3</span><span>HAVING, WHERE y JOINS</span></a></li><li><a href="#parte-4"><span class="toc-n">4</span><span>Subqueries</span></a></li><li><a href="#parte-5"><span class="toc-n">5</span><span>PostgreSQL y consultas avanzadas</span></a></li></ol>
+      </aside>
+      <div class="parts">
+      <article class="part" id="parte-1">
+        <header class="part-head">
+          <p class="eyebrow">Parte 1</p>
+          <h2>Introducción a SQL</h2>
+          <dl class="meta"><div><dt>Motor</dt><dd>SQLite</dd></div><div><dt>Herramienta</dt><dd>SQLiteStudio</dd></div></dl>
+        </header>
+        <div class="part-body"><div class="prose"><p>Esta sección cubre los conceptos básicos de SQL: cómo crear tablas, cargar datos y usar algunas funciones elementales.</p></div>
+<ol class="steps"><li><span>Cómo crear una tabla y cargar datos</span></li><li><span><code>SELECT</code> básico</span></li><li><span>Uso de <code>WHERE</code></span></li><li><span><code>ORDER BY</code></span></li><li><span>Funciones de agregación (<code>AVG</code>)</span></li><li><span><code>GROUP BY</code></span></li></ol>
+<div class="gallery" data-gallery="ef962cb5bc-03c72952-ce3f2049"><a class="shot" href="/Portfolio/uploads/sql-p1-1.jpg" data-index="0" data-caption="">
+          <img src="/Portfolio/uploads/sql-p1-1.jpg" alt="Captura 1" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p1-2.jpg" data-index="1" data-caption="">
+          <img src="/Portfolio/uploads/sql-p1-2.jpg" alt="Captura 2" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p1-3.jpg" data-index="2" data-caption="">
+          <img src="/Portfolio/uploads/sql-p1-3.jpg" alt="Captura 3" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p1-4.jpg" data-index="3" data-caption="">
+          <img src="/Portfolio/uploads/sql-p1-4.jpg" alt="Captura 4" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p1-5.jpg" data-index="4" data-caption="">
+          <img src="/Portfolio/uploads/sql-p1-5.jpg" alt="Captura 5" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p1-6.jpg" data-index="5" data-caption="">
+          <img src="/Portfolio/uploads/sql-p1-6.jpg" alt="Captura 6" loading="lazy" decoding="async">
+          
+        </a></div>
+<div class="prose"><p>Se ven conceptos como tablas, filas, columnas y claves primarias.</p></div></div>
+      </article>
+      <article class="part" id="parte-2">
+        <header class="part-head">
+          <p class="eyebrow">Parte 2</p>
+          <h2>Relaciones entre tablas y consultas más complejas</h2>
+          <dl class="meta"><div><dt>Motor</dt><dd>SQLite</dd></div><div><dt>Herramienta</dt><dd>SQLiteStudio</dd></div></dl>
+        </header>
+        <div class="part-body"><div class="prose"><p>En esta sección muestro cómo se relacionan las tablas entre sí y cómo usar <code>JOIN</code> para responder preguntas más complejas.</p></div>
+<ol class="steps"><li><span>Estructura de la base de datos y tablas relacionadas</span></li><li><span>Uso de <code>JOIN</code> para relacionar empleados y proyectos</span></li><li><span><code>JOIN</code> + <code>GROUP BY</code> para contar empleados por proyecto</span></li><li><span>Funciones de agregación (<code>AVG</code>) aplicadas a datos relacionados</span></li><li><span><code>JOIN</code> + <code>WHERE</code> para filtrar información entre tablas</span></li></ol>
+<div class="gallery" data-gallery="ef962cb5bc-d61a2bc7-a48af62f"><a class="shot" href="/Portfolio/uploads/sql-p2-1.jpg" data-index="0" data-caption="">
+          <img src="/Portfolio/uploads/sql-p2-1.jpg" alt="Captura 1" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p2-2.jpg" data-index="1" data-caption="">
+          <img src="/Portfolio/uploads/sql-p2-2.jpg" alt="Captura 2" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p2-3.jpg" data-index="2" data-caption="">
+          <img src="/Portfolio/uploads/sql-p2-3.jpg" alt="Captura 3" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p2-4.jpg" data-index="3" data-caption="">
+          <img src="/Portfolio/uploads/sql-p2-4.jpg" alt="Captura 4" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p2-5.jpg" data-index="4" data-caption="">
+          <img src="/Portfolio/uploads/sql-p2-5.jpg" alt="Captura 5" loading="lazy" decoding="async">
+          
+        </a></div>
+<div class="prose"><p>La idea es mostrar cómo SQL permite responder preguntas concretas a partir de datos relacionados.</p></div></div>
+      </article>
+      <article class="part" id="parte-3">
+        <header class="part-head">
+          <p class="eyebrow">Parte 3</p>
+          <h2>HAVING, WHERE y JOINS</h2>
+          <dl class="meta"><div><dt>Motor</dt><dd>SQLite</dd></div><div><dt>Herramienta</dt><dd>SQLiteStudio</dd></div></dl>
+        </header>
+        <div class="part-body"><div class="prose"><p>Continuando con las partes anteriores, en esta ocasión avanzamos con consultas más complejas.</p></div>
+<ol class="steps"><li><span>Diferencias entre las sentencias <code>JOIN</code></span></li><li><span><code>HAVING</code> y su diferencia con <code>WHERE</code></span></li><li><span>Uso de <code>INNER JOIN</code></span></li><li><span>Uso de <code>LEFT JOIN</code></span></li><li><span>Uso de <code>HAVING</code></span></li><li><span>Subconsulta sencilla</span></li></ol>
+<div class="gallery" data-gallery="ef962cb5bc-9d43217d-ad32e242"><a class="shot" href="/Portfolio/uploads/sql-p3-1.jpg" data-index="0" data-caption="">
+          <img src="/Portfolio/uploads/sql-p3-1.jpg" alt="Captura 1" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p3-2.jpg" data-index="1" data-caption="">
+          <img src="/Portfolio/uploads/sql-p3-2.jpg" alt="Captura 2" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p3-3.jpg" data-index="2" data-caption="">
+          <img src="/Portfolio/uploads/sql-p3-3.jpg" alt="Captura 3" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p3-4.jpg" data-index="3" data-caption="">
+          <img src="/Portfolio/uploads/sql-p3-4.jpg" alt="Captura 4" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p3-5.jpg" data-index="4" data-caption="">
+          <img src="/Portfolio/uploads/sql-p3-5.jpg" alt="Captura 5" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p3-6.jpg" data-index="5" data-caption="">
+          <img src="/Portfolio/uploads/sql-p3-6.jpg" alt="Captura 6" loading="lazy" decoding="async">
+          
+        </a></div>
+<div class="prose"><p>Seguimos avanzando incorporando consultas un poco más complejas, manteniendo siempre ejemplos simples y reales.</p></div></div>
+      </article>
+      <article class="part" id="parte-4">
+        <header class="part-head">
+          <p class="eyebrow">Parte 4</p>
+          <h2>Subqueries</h2>
+          <dl class="meta"><div><dt>Motor</dt><dd>PostgreSQL</dd></div><div><dt>Herramienta</dt><dd>pgAdmin</dd></div></dl>
+        </header>
+        <div class="part-body"><div class="prose"><p>En esta parte explico cómo usar <strong>subconsultas</strong>.</p></div>
+<ol class="steps"><li><span>¿Qué es una subconsulta?</span></li><li><span>Subconsultas en la cláusula <code>WHERE</code></span></li><li><span>Subconsultas en la cláusula <code>FROM</code></span></li><li><span>Subconsultas correlacionadas</span></li></ol>
+<div class="gallery" data-gallery="ef962cb5bc-10eb3416-60489bd8"><a class="shot" href="/Portfolio/uploads/sql-p4-1.jpg" data-index="0" data-caption="">
+          <img src="/Portfolio/uploads/sql-p4-1.jpg" alt="Captura 1" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p4-2.jpg" data-index="1" data-caption="">
+          <img src="/Portfolio/uploads/sql-p4-2.jpg" alt="Captura 2" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p4-3.jpg" data-index="2" data-caption="">
+          <img src="/Portfolio/uploads/sql-p4-3.jpg" alt="Captura 3" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p4-4.jpg" data-index="3" data-caption="">
+          <img src="/Portfolio/uploads/sql-p4-4.jpg" alt="Captura 4" loading="lazy" decoding="async">
+          
+        </a></div>
+<div class="prose"><p>En la próxima parte vamos a comenzar a trabajar con PostgreSQL, viendo cómo conectarnos a una base de datos y cómo resolver consultas más complejas cuando no es posible utilizar <code>JOIN</code>.</p></div></div>
+      </article>
+      <article class="part" id="parte-5">
+        <header class="part-head">
+          <p class="eyebrow">Parte 5</p>
+          <h2>PostgreSQL y consultas avanzadas</h2>
+          <dl class="meta"><div><dt>Motor</dt><dd>PostgreSQL</dd></div><div><dt>Herramienta</dt><dd>pgAdmin</dd></div></dl>
+        </header>
+        <div class="part-body"><div class="prose"><p>En esta parte final muestro cómo trabajar con PostgreSQL y resolver consultas más complejas.</p></div>
+<ol class="steps"><li><span>Conexión a PostgreSQL</span></li><li><span>Estructura y valores</span></li><li><span>Ejemplo 1 sin <code>JOIN</code></span></li><li><span>Ejemplo 2 sin <code>JOIN</code></span></li><li><span>Ejemplo 3 sin <code>JOIN</code></span></li></ol>
+<div class="gallery" data-gallery="ef962cb5bc-bf9e32d2-f8138a02"><a class="shot" href="/Portfolio/uploads/sql-p5-1.jpg" data-index="0" data-caption="">
+          <img src="/Portfolio/uploads/sql-p5-1.jpg" alt="Captura 1" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p5-2.jpg" data-index="1" data-caption="">
+          <img src="/Portfolio/uploads/sql-p5-2.jpg" alt="Captura 2" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p5-3.jpg" data-index="2" data-caption="">
+          <img src="/Portfolio/uploads/sql-p5-3.jpg" alt="Captura 3" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p5-4.jpg" data-index="3" data-caption="">
+          <img src="/Portfolio/uploads/sql-p5-4.jpg" alt="Captura 4" loading="lazy" decoding="async">
+          
+        </a><a class="shot" href="/Portfolio/uploads/sql-p5-5.jpg" data-index="4" data-caption="">
+          <img src="/Portfolio/uploads/sql-p5-5.jpg" alt="Captura 5" loading="lazy" decoding="async">
+          
+        </a></div>
+<div class="prose"><p>Se muestran conexión a PostgreSQL, CTEs, funciones de ventana y consultas avanzadas.</p></div></div>
+      </article></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Damián Briante</span>
+      <span class="muted">En constante desarrollo</span>
+    </div>
+  </footer>
+  <script src="/Portfolio/js/site.js" defer></script>
+</body>
+</html>

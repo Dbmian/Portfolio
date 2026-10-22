@@ -1,0 +1,4 @@
+node_modules/
+data/admin.json
+data/secret.json
+.env
